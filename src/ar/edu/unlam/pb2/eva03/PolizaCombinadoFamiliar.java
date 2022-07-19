@@ -1,5 +1,8 @@
 package ar.edu.unlam.pb2.eva03;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class PolizaCombinadoFamiliar  extends SegurosGenerales{
 
 	private final  Integer NUMERO_DE_POLIZA;
@@ -10,6 +13,7 @@ public class PolizaCombinadoFamiliar  extends SegurosGenerales{
 
 	private final Double PRIMA;
 	private Boolean accidente;
+	private Map<Persona, TipoDeBeneficiario> beneficiarios;
 
 	public PolizaCombinadoFamiliar(Integer nUMERO_DE_POLIZA, Persona asegurado, Double sUMA_ASEGURADA, Double pRIMA) {
 		this.NUMERO_DE_POLIZA=nUMERO_DE_POLIZA;
@@ -17,10 +21,11 @@ public class PolizaCombinadoFamiliar  extends SegurosGenerales{
 		this.SUMA_ASEGURADA=sUMA_ASEGURADA;
 		this.PRIMA=pRIMA;
 		this.accidente=false;
+		this.beneficiarios= new TreeMap<Persona, TipoDeBeneficiario>();
 	}
 
-	public void agregarBeneficiario(Persona hijo, TipoDeBeneficiario hijo2) {
-		// TODO Auto-generated method stub
+	public void agregarBeneficiario(Persona beneficiario, TipoDeBeneficiario hijo2) {
+	this.beneficiarios.put(beneficiario, hijo2);
 		
 	}
 
@@ -29,9 +34,10 @@ public class PolizaCombinadoFamiliar  extends SegurosGenerales{
 		
 	}
 
-	public Object obtenerCantidadDeBeneficiario() {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer obtenerCantidadDeBeneficiario() {
+		Integer cantidadDeBeneficiario=beneficiarios.size();
+		
+		return cantidadDeBeneficiario;
 	}
 
 	public Persona getAsegurado() {

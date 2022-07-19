@@ -13,6 +13,7 @@ public class PolizaAccidentesPersonales extends SegurosDeVida {
 
 	public PolizaAccidentesPersonales(Integer nUMERO_DE_POLIZA, Persona asegurado, Double sUMA_ASEGURADA,
 			Double pRIMA) {
+		
 	this.NUMERO_DE_POLIZA= nUMERO_DE_POLIZA;
 	this.asegudado=asegurado;
 	this.SUMA_ASEGURADA=sUMA_ASEGURADA;
@@ -30,7 +31,7 @@ public class PolizaAccidentesPersonales extends SegurosDeVida {
 	}
 
 	public Persona getAsegudado() {
-		return asegudado;
+		return  this.asegudado;
 	}
 
 	public void setAsegudado(Persona asegudado) {
@@ -48,6 +49,10 @@ public class PolizaAccidentesPersonales extends SegurosDeVida {
 	public Double getPRIMA() {
 		return PRIMA;
 	}
+	public Double getPremio() {
+		return PRIMA*1.2;
+	}
+	
 
 	public void setPRIMA(Double pRIMA) {
 		PRIMA = pRIMA;

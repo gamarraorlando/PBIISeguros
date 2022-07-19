@@ -4,6 +4,25 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SegurosDeVida  extends SegurosGenerales{
+	private Integer NUMERO_DE_POLIZA;
+	private Persona asegurado;
+	private  Double SUMA_ASEGURADA;
+	private Double PRIMA;
+	
+	private Boolean robado;
+	
+	
+	
+	
+	
+	public SegurosDeVida(Integer NUMERO_DE_POLIZA, Persona  asegurado, Double  SUMA_ASEGURADA, Double   prima) {
+		this.NUMERO_DE_POLIZA= NUMERO_DE_POLIZA;
+		this.asegurado=asegurado;
+		this.SUMA_ASEGURADA=SUMA_ASEGURADA;
+		this.PRIMA=prima;
+		
+		
+	}
 	private Boolean accidente;
 	private Set<Persona> asegurados;
 	public SegurosDeVida () {
@@ -24,12 +43,12 @@ public class SegurosDeVida  extends SegurosGenerales{
 
 	public Persona getAsegurado() {
 		
-		return null;
+		return this.asegurado;
 	}
 
 	public Double getPremio() {
 		
-		return null;
+		return this.PRIMA*1.21;
 	}
 
 	@Override
